@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Display = (props) => {
-    const { value } = props;
-
+    const { value } = props
     return (
         <div>
             <div>{value.personal.name}</div>
@@ -16,6 +15,10 @@ const Display = (props) => {
             <div>{value.work.start}</div>
             <div>{value.work.end}</div>
             <div>{value.work.discription}</div>
+            <div>{value.education[0].institution}</div>
+            <div>{value.education[0].name}</div>
+            <div>{value.education[0].start}</div>
+            <div>{value.education[0].end}</div>
         </div>
 
     )
