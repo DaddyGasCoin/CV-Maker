@@ -2,12 +2,14 @@
 import React, { Component } from "react";
 import Display from "./components/Display";
 import General from "./components/General";
+import WorkXP from "./components/WorkXP";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       personal: { name: '', email: '', occupation: '', DOB: '', phone: '', location: '' },
+      work: { company: '', occupation: '', start: '', end: '', discription: '' }
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -27,6 +29,7 @@ class App extends Component {
       <div className="container">
         <div className="form-enter">
           <General handler={this.handleChange} value={this.state.personal} />
+          <WorkXP handler={this.handleChange} value={this.state.work} />
         </div>
         <div className="form-view">
           <Display value={this.state} />
