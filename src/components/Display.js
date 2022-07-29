@@ -7,6 +7,11 @@ const Display = (props) => {
         <div>
             <div>{value.personal.name}</div>
             <div>{value.personal.email}</div>
+            <div>{value.personal.occupation}</div>
+            <div>{value.personal.phone}</div>
+            <div>{value.personal.DOB}</div>
+            <div>{value.personal.location}</div>
+
         </div>
 
     )

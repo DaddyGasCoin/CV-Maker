@@ -18,6 +18,31 @@ const General = (props) => {
                     value={props.value.email} onChange={props.handler} name="email"
                     data-info="personal" />
             </div>
+            <div>
+                <label htmlFor="occupation">occupation</label>
+                <input type="text" id="occupation"
+                    value={props.value.occupation} onChange={props.handler} name="occupation"
+                    data-info="personal" />
+            </div>
+            <div>
+                <label htmlFor="phone">Phone Number</label>
+                <input type="text" id="phone"
+                    value={props.value.phone} onChange={props.handler} name="phone"
+                    data-info="personal" />
+            </div>
+            <div>
+                <label htmlFor="dob">Date of Birth</label>
+                <input type="text" id="dob"
+                    value={props.value.DOB} onChange={props.handler} name="DOB"
+                    data-info="personal" />
+            </div>
+            <div>
+                <label htmlFor="location">location</label>
+                <input type="text" id="location"
+                    value={props.value.location} onChange={props.handler} name="location"
+                    data-info="personal" />
+            </div>
+
         </div>
 
     )
