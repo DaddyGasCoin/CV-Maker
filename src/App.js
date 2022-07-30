@@ -27,6 +27,7 @@ class App extends Component {
     const name = target.name;
     this.setState({ [type]: { ...this.state[type], [name]: value } });
   }
+
   // update objects in array
   handle(event) {
     const target = event.target;
@@ -42,9 +43,18 @@ class App extends Component {
     return (
       <div className="container">
         <div className="form-enter">
-          <General handler={this.handleChange} value={this.state.personal} />
-          <WorkXP handler={this.handleChange} value={this.state.work} />
-          <Education handler={this.handle} value={this.state.education[0]} />
+          <div className="personal">
+            <div className="header">personal information</div>
+            <General handler={this.handleChange} value={this.state.personal} />
+          </div>
+          <div className="work">
+            <div className="header">Work Experience</div>
+            <WorkXP handler={this.handleChange} value={this.state.work} />
+          </div>
+          <div className="education">
+            <div className="header">Education Details</div>
+            <Education handler={this.handle} value={this.state.education[0]} />
+          </div>
         </div>
         <div className="form-view">
           <Display value={this.state} />

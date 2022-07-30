@@ -4,7 +4,7 @@ import InfoDetail from "./InfoDetail";
 
 const General = (props) => {
     return (
-        <div>
+        <div className="detail-group">
             <InfoDetail main={props} name="name" group="personal" />
             <InfoDetail main={props} name="email" group="personal" />
             <InfoDetail main={props} name="occupation" group="personal" />
