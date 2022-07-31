@@ -20,6 +20,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handle = this.handle.bind(this);
     this.addItem = this.addItem.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
   }
 
   addItem() {
@@ -27,6 +28,17 @@ class App extends Component {
     newState.education.push({ institution: '', name: '', start: '', end: '', id: uniqid() })
     this.setState(newState);
   }
+
+  deleteItem(event) {
+    const targetid = event.target.dataset.id
+    const newState = Object.assign({}, this.state);
+    const index = this.state.education.map(e => e.id).indexOf(targetid);
+    //delete based on index;from uniqeid
+    newState.education.splice(index, 1)
+    this.setState(newState);
+
+  }
+
   handleChange(event) {
     const target = event.target;
     const type = target.dataset.info
@@ -68,7 +80,7 @@ class App extends Component {
             {/* render each  object of education state array */}
             {this.state.education.map((detail) => {
               return <Education handler={this.handle} value={detail} add={this.addItem}
-                id={detail.id} key={detail.id} />
+                id={detail.id} key={detail.id} del={this.deleteItem} />
             })}
 
 
