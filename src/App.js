@@ -4,6 +4,7 @@ import Display from "./components/Display";
 import General from "./components/General";
 import WorkXP from "./components/WorkXP";
 import Education from "./components/Education";
+import DisplayGeneral from "./components/DisplayGeneral";
 import uniqid from "uniqid";
 
 
@@ -11,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      personal: { name: '', email: '', occupation: '', DOB: '', phone: '', location: '' },
+      personal: { name: '', email: '', occupation: '', phone: '', location: '' },
       work: [{ company: '', occupation: '', start: '', end: '', discription: '', id: uniqid() }],
       education:
         [{ institution: '', name: '', start: '', end: '', id: uniqid() }]
@@ -94,11 +95,10 @@ class App extends Component {
               return <Education handler={this.handle} value={detail} add={this.addItem}
                 id={detail.id} key={detail.id} del={this.deleteItem} />
             })}
-
-
           </div>
         </div>
         <div className="form-view">
+          <DisplayGeneral value={this.state.personal} />
           <Display value={this.state} />
         </div>
       </div>

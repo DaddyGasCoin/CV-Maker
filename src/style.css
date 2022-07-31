@@ -44,3 +44,49 @@ label {
     text-transform: capitalize;
     width: 50%;
 }
+
+.general-section {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.general-left,
+.general-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.tittle-name {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.tittle-occupation {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.contact-info {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.contact-info-email {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.general-right {
+    text-align: right;
+    align-items: baseline;
+    justify-content: center;
+
+}
