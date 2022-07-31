@@ -9,8 +9,8 @@ const Education = (props) => {
             <InfoDetail main={props} name="name" group="education" />
             <InfoDetail main={props} name="start" group="education" />
             <InfoDetail main={props} name="end" group="education" />
-            <button onClick={props.add}>ADD</button>
-            <button data-id={props.id} onClick={props.del}> DELETE</button>
+            <button data-group="education" onClick={props.add}>ADD</button>
+            <button data-group="education" data-id={props.id} onClick={props.del}> DELETE</button>
         </div>
     )
 
