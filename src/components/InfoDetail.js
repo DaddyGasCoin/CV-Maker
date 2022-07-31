@@ -8,7 +8,7 @@ const InfoDetail = (props) => {
             <label htmlFor={name}>{name}</label>
             <input type="text" id={name}
                 value={value[name]} onChange={handler} name={name}
-                data-info={group} />
+                data-info={group} data-id={props.main.id} />
         </div>
     )
 

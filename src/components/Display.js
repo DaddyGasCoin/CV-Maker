@@ -14,18 +14,20 @@ const Display = (props) => {
             <div>{value.work.occupation}</div>
             <div>{value.work.start}</div>
             <div>{value.work.end}</div>
-            <div>{value.education.map((detail) => {
-                return detail.institution
-            })}</div>
-            <div>{value.education.map((detail) => {
-                return detail.name
-            })}</div>
-            <div>{value.education.map((detail) => {
-                return detail.start
-            })}</div>
-            <div>{value.education.map((detail) => {
-                return detail.end
-            })}</div>
+            <div>{value.work.discription}</div>
+            <div>
+                {value.education.map((detail, index) => {
+                    return <div>
+                        <div key={index}>{detail.institution}</div>
+                        <div key={index}>{detail.name}</div>
+                        <div key={index}>{detail.start}</div>
+                        <div key={index}>{detail.end}</div>
+                    </div>
+                })}
+            </div>
+
+
+
         </div>
 
     )

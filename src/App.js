@@ -14,7 +14,7 @@ class App extends Component {
       personal: { name: '', email: '', occupation: '', DOB: '', phone: '', location: '' },
       work: { company: '', occupation: '', start: '', end: '', discription: '' },
       education:
-        [{ institution: '', name: '', start: '', end: '', id: uniqid() }],
+        [{ institution: '', name: '', start: '', end: '', id: uniqid() }]
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,8 +40,11 @@ class App extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
+    const targetid = target.dataset.id
+    const index = this.state.education.map(e => e.id).indexOf(targetid);
     const newState = Object.assign({}, this.state);
-    newState.education[0][name] = value
+    // update element based on uniqueID takeen from targetID
+    newState.education[index][name] = value
     this.setState(newState);
 
   }
@@ -64,7 +67,8 @@ class App extends Component {
             <div className="header">Education Details</div>
             {/* render each  object of education state array */}
             {this.state.education.map((detail) => {
-              return <Education handler={this.handle} value={detail} add={this.addItem} key={detail.id} />
+              return <Education handler={this.handle} value={detail} add={this.addItem}
+                id={detail.id} key={detail.id} />
             })}
 
 
