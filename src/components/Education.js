@@ -4,12 +4,12 @@ import InfoDetail from "./InfoDetail";
 const Education = (props) => {
 
     return (
-
         <div className="detail-group">
             <InfoDetail main={props} name="institution" group="education" />
             <InfoDetail main={props} name="name" group="education" />
             <InfoDetail main={props} name="start" group="education" />
             <InfoDetail main={props} name="end" group="education" />
+            <button onClick={props.add}>ADD</button>
         </div>
     )
 

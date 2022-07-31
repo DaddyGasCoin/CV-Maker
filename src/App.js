@@ -4,6 +4,8 @@ import Display from "./components/Display";
 import General from "./components/General";
 import WorkXP from "./components/WorkXP";
 import Education from "./components/Education";
+import uniqid from "uniqid";
+
 
 class App extends Component {
   constructor() {
@@ -12,14 +14,19 @@ class App extends Component {
       personal: { name: '', email: '', occupation: '', DOB: '', phone: '', location: '' },
       work: { company: '', occupation: '', start: '', end: '', discription: '' },
       education:
-        [{ institution: '', name: '', start: '', end: '' }],
-
-
+        [{ institution: '', name: '', start: '', end: '', id: uniqid() }],
     }
+
     this.handleChange = this.handleChange.bind(this);
     this.handle = this.handle.bind(this);
+    this.addItem = this.addItem.bind(this)
   }
 
+  addItem() {
+    const newState = Object.assign({}, this.state);
+    newState.education.push({ institution: '', name: '', start: '', end: '', id: uniqid() })
+    this.setState(newState);
+  }
   handleChange(event) {
     const target = event.target;
     const type = target.dataset.info
@@ -40,6 +47,8 @@ class App extends Component {
   }
 
   render() {
+
+
     return (
       <div className="container">
         <div className="form-enter">
@@ -53,7 +62,12 @@ class App extends Component {
           </div>
           <div className="education">
             <div className="header">Education Details</div>
-            <Education handler={this.handle} value={this.state.education[0]} />
+            {/* render each  object of education state array */}
+            {this.state.education.map((detail) => {
+              return <Education handler={this.handle} value={detail} add={this.addItem} key={detail.id} />
+            })}
+
+
           </div>
         </div>
         <div className="form-view">
