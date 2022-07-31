@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from "uniqid";
 
 const Display = (props) => {
     const { value } = props
@@ -16,13 +17,14 @@ const Display = (props) => {
             <div>{value.work.end}</div>
             <div>{value.work.discription}</div>
             <div>
-                {value.education.map((detail, index) => {
-                    return <div>
-                        <div key={index}>{detail.institution}</div>
-                        <div key={index}>{detail.name}</div>
-                        <div key={index}>{detail.start}</div>
-                        <div key={index}>{detail.end}</div>
-                    </div>
+                {value.education.map((detail) => {
+                    return (
+                        <div>
+                            <div key={uniqid()}>{detail.institution}</div>
+                            <div key={uniqid()}>{detail.name}</div>
+                            <div key={uniqid()}>{detail.start}</div>
+                            <div key={uniqid()}>{detail.end}</div>
+                        </div>)
                 })}
             </div>
 
