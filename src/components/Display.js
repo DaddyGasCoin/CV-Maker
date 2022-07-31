@@ -11,25 +11,29 @@ const Display = (props) => {
             <div>{value.personal.phone}</div>
             <div>{value.personal.DOB}</div>
             <div>{value.personal.location}</div>
-            <div>{value.work.company}</div>
-            <div>{value.work.occupation}</div>
-            <div>{value.work.start}</div>
-            <div>{value.work.end}</div>
-            <div>{value.work.discription}</div>
-            <div>
-                {value.education.map((detail) => {
-                    return (
-                        <div>
-                            <div key={uniqid()}>{detail.institution}</div>
-                            <div key={uniqid()}>{detail.name}</div>
-                            <div key={uniqid()}>{detail.start}</div>
-                            <div key={uniqid()}>{detail.end}</div>
-                        </div>)
-                })}
-            </div>
 
+            {/* display all work details */}
+            {value.work.map((detail) => {
+                return (
+                    <div>
+                        <div key={uniqid()}>{detail.company}</div>
+                        <div key={uniqid()}>{detail.occupation}</div>
+                        <div key={uniqid()}>{detail.start}</div>
+                        <div key={uniqid()}>{detail.end}</div>
+                        <div key={uniqid()}>{detail.discription}</div>
+                    </div>)
+            })}
 
-
+            {/* display all education details */}
+            {value.education.map((detail) => {
+                return (
+                    <div>
+                        <div key={uniqid()}>{detail.institution}</div>
+                        <div key={uniqid()}>{detail.name}</div>
+                        <div key={uniqid()}>{detail.start}</div>
+                        <div key={uniqid()}>{detail.end}</div>
+                    </div>)
+            })}
         </div>
 
     )

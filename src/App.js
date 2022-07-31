@@ -12,7 +12,7 @@ class App extends Component {
     super();
     this.state = {
       personal: { name: '', email: '', occupation: '', DOB: '', phone: '', location: '' },
-      work: { company: '', occupation: '', start: '', end: '', discription: '' },
+      work: [{ company: '', occupation: '', start: '', end: '', discription: '', id: uniqid() }],
       education:
         [{ institution: '', name: '', start: '', end: '', id: uniqid() }]
     }
@@ -23,18 +23,26 @@ class App extends Component {
     this.deleteItem = this.deleteItem.bind(this)
   }
 
-  addItem() {
+  addItem(event) {
+    const group = event.target.dataset.group
     const newState = Object.assign({}, this.state);
-    newState.education.push({ institution: '', name: '', start: '', end: '', id: uniqid() })
+    if (group === 'work') {
+      newState.work.push({ company: '', occupation: '', start: '', end: '', discription: '', id: uniqid() })
+    }
+    else {
+      newState.education.push({ institution: '', name: '', start: '', end: '', id: uniqid() })
+    }
+
     this.setState(newState);
   }
 
   deleteItem(event) {
     const targetid = event.target.dataset.id
     const newState = Object.assign({}, this.state);
-    const index = this.state.education.map(e => e.id).indexOf(targetid);
+    const group = event.target.dataset.group
+    const index = this.state[group].map(e => e.id).indexOf(targetid);
     //delete based on index;from uniqeid
-    newState.education.splice(index, 1)
+    newState[group].splice(index, 1)
     this.setState(newState);
 
   }
@@ -47,16 +55,16 @@ class App extends Component {
     this.setState({ [type]: { ...this.state[type], [name]: value } });
   }
 
-  // update objects in array
+  // update objects in work or personal state array
   handle(event) {
     const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const value = target.value; //content to update
+    const name = target.name; // property of object
     const targetid = target.dataset.id
-    const index = this.state.education.map(e => e.id).indexOf(targetid);
+    const group = target.dataset.info // target personal or work array
+    const index = this.state[group].map(e => e.id).indexOf(targetid); //reveice index 
     const newState = Object.assign({}, this.state);
-    // update element based on uniqueID takeen from targetID
-    newState.education[index][name] = value
+    newState[group][index][name] = value
     this.setState(newState);
 
   }
@@ -73,7 +81,11 @@ class App extends Component {
           </div>
           <div className="work">
             <div className="header">Work Experience</div>
-            <WorkXP handler={this.handleChange} value={this.state.work} />
+            {/* render each  object of work state array */}
+            {this.state.work.map((detail) => {
+              return <WorkXP handler={this.handle} value={detail} add={this.addItem}
+                id={detail.id} key={detail.id} del={this.deleteItem} />
+            })}
           </div>
           <div className="education">
             <div className="header">Education Details</div>

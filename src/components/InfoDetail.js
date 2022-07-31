@@ -3,6 +3,7 @@ import React from "react";
 
 const InfoDetail = (props) => {
     const { main: { value }, main: { handler }, name, group } = props
+
     return (
         <div className="test">
             <label htmlFor={name}>{name}</label>
