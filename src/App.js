@@ -14,10 +14,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      personal: { name: '', email: '', occupation: '', phone: '', location: '' },
-      work: [{ company: '', occupation: '', start: '', end: '', discription: '', id: uniqid() }],
+      personal: {
+        name: 'Johnathon Doe', email: 'johndoe@email.com', occupation: 'Web Developer', phone: '12345678',
+        location: 'Bangalore,IND'
+      },
+      work: [{
+        company: 'Some Company', occupation: 'Web Developer', start: '2017', end: '2021',
+        discription: 'Vivamus suscipit, nisl quis sollicitudin tristique, nisi libero dictum massa, vitae tristique est nunc vel massa. Vivamus ullamcorper vel ligula eget consectetur. Aliquam non mi eu est maximus gravida. Nullam eget urna vel felis ullamcorper hendrerit aliquet sit amet turpis. Aenean id congue erat, sit amet ultricies sem',
+        id: uniqid()
+      }],
       education:
-        [{ institution: '', name: '', start: '', end: '', id: uniqid() }]
+        [{ institution: 'Some School', name: 'Some degree', start: '2013', end: '2017', id: uniqid() }]
     }
 
     this.handleChange = this.handleChange.bind(this);
