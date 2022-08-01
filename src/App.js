@@ -5,6 +5,7 @@ import General from "./components/General";
 import WorkXP from "./components/WorkXP";
 import Education from "./components/Education";
 import DisplayGeneral from "./components/DisplayGeneral";
+import DisplayWorkXP from "./components/DisplayWorkXP";
 import uniqid from "uniqid";
 
 
@@ -99,7 +100,9 @@ class App extends Component {
         </div>
         <div className="form-view">
           <DisplayGeneral value={this.state.personal} />
-          <Display value={this.state} />
+          <div className="work-header">Work Experience</div>
+          <DisplayWorkXP value={this.state.work} />
+          {/* <Display value={this.state} /> */}
         </div>
       </div>
     );
