@@ -1,11 +1,12 @@
 
 import React, { Component } from "react";
-import Display from "./components/Display";
+// import Display from "./components/Display";
 import General from "./components/General";
 import WorkXP from "./components/WorkXP";
 import Education from "./components/Education";
 import DisplayGeneral from "./components/DisplayGeneral";
 import DisplayWorkXP from "./components/DisplayWorkXP";
+import DisplayEducation from "./components/DisplayEducation";
 import uniqid from "uniqid";
 
 
@@ -102,7 +103,8 @@ class App extends Component {
           <DisplayGeneral value={this.state.personal} />
           <div className="work-header">Work Experience</div>
           <DisplayWorkXP value={this.state.work} />
-          {/* <Display value={this.state} /> */}
+          <div className="work-header">Education Details</div>
+          <DisplayEducation value={this.state.education} />
         </div>
       </div>
     );
