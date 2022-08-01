@@ -84,6 +84,9 @@ class App extends Component {
           </div>
           <div className="work">
             <div className="header">Work Experience</div>
+            {/* display add button if state is empty */}
+            {this.state.work.length === 0 ?
+              <div><button className="add" data-group="work" onClick={this.addItem}>ADD</button></div> : null}
             {/* render each  object of work state array */}
             {this.state.work.map((detail) => {
               return <WorkXP handler={this.handle} value={detail} add={this.addItem}
@@ -92,6 +95,8 @@ class App extends Component {
           </div>
           <div className="education">
             <div className="header">Education Details</div>
+            {this.state.education.length === 0 ?
+              <div><button className="add" data-group="education" onClick={this.addItem}>ADD</button></div> : null}
             {/* render each  object of education state array */}
             {this.state.education.map((detail) => {
               return <Education handler={this.handle} value={detail} add={this.addItem}
