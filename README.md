@@ -1,3 +1,5 @@
-# Getting Started with Create React App
+# CV Application generator
 
-A CV appplication maker created using react.
+A CV appplication tool created using React
+
+http://DaddyGasCoin.github.io/CV-Maker
