@@ -3,7 +3,6 @@ import uniqid from "uniqid";
 
 const DisplayWorkXP = (props) => {
     const { value } = props
-    // console.log(value)
 
     return (
         <div >

@@ -11,8 +11,8 @@ const DisplayGeneral = (props) => {
             </div>
             <div className='general-right'>
                 <div className='contact-info'>{value.phone}</div>
-                <div className='contact-info-email'>{value.email}</div>
                 <div className='contact-info'>{value.location}</div>
+                <div className='contact-info-email'>{value.email}</div>
             </div>
         </div>
     )
