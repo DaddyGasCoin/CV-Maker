@@ -20,7 +20,7 @@ const DisplayWorkXP = (props) => {
                             </div>
 
                         </div>
-                        <div key={uniqid()}>{detail.discription}</div>
+                        <div class="disc" key={uniqid()}>{detail.discription}</div>
                     </div>)
             })}
         </div>

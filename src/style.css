@@ -1,25 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .container {
     display: flex;
-    /* justify-content: center; */
-    gap: 10px;
+    gap: 20px;
     font-family: 'IBM Plex Sans', sans-serif;
+    margin: 20px;
 }
 
 .form-enter,
 .form-view {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 5px;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 15px;
     gap: 10px;
+    padding-bottom: 50px;
+    overflow-y: scroll;
+}
+
+.form-enter::-webkit-scrollbar,
+.form-view::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa;
+}
+
+.form-enter::-webkit-scrollbar-thumb,
+.form-view::-webkit-scrollbar-thumb {
+    background: #aaa;
 }
 
 .test {
     display: flex;
+}
+
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .work,
@@ -27,7 +53,7 @@
 .personal {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .header {
@@ -38,12 +64,15 @@
 
 input {
     width: 100%;
+    height: 28px;
+    font-size: 20px;
 }
 
 label {
     font-family: 'IBM Plex Sans', sans-serif;
     text-transform: capitalize;
     width: 50%;
+    font-size: 20px;
 }
 
 .general-section,
@@ -64,6 +93,7 @@ label {
     display: flex;
     flex-direction: column;
 }
+
 
 .tittle-name {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -99,6 +129,7 @@ label {
 .work-header {
     font-size: 22px;
     font-weight: 700;
+    color: #075985;
 }
 
 .work-right {
@@ -108,7 +139,8 @@ label {
 .work-company {
     text-transform: uppercase;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
+    color: #16a34a;
 }
 
 .work-job,
@@ -117,6 +149,49 @@ label {
     font-weight: 400;
 }
 
+.work-job {
+    font-weight: 500;
+    text-indent: 2px;
+}
+
 .work-container {
     margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 5px
+}
+
+button {
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.add:hover {
+    background-color: #22c55e;
+}
+
+.del:hover {
+    background-color: #ef4444;
+}
+
+#discription {
+    width: 100%;
+    height: 60px;
+    text-overflow: clip;
+    text-align: unset
+}
+
+.header {
+    font-size: 27px;
+    font-weight: 600;
+    padding: 10px;
+    color: #0e7490;
+}
+
+.disc {
+    padding-left: 4px;
 }
